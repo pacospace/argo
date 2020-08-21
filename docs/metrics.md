@@ -120,6 +120,7 @@ Metric names can only contain alphanumeric characters, `_`, and `:`.
  level Gauge metric that will report the Workflow duration time:
  
  ```yaml
+...
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
@@ -136,7 +137,7 @@ spec:
         gauge:                            # The metric type. Available are "gauge", "histogram", and "counter".
           value: "{{workflow.duration}}"  # The value of your metric. It could be an Argo variable (see variables doc) or a literal value
 
-... 
+...
 ```
 
 An example of a `Template`-level Counter metric that will increase a counter every time the step fails:
